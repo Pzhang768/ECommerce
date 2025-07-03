@@ -1,14 +1,7 @@
 const express = require('express');
 const userRouter = express.Router();
+const userController = require('../controllers/userController');
 
-userRouter.get('/', function (req, res) {
-  res.send({data: "asds"});
-})
-
-userRouter.get("/profile", (req, res) => {
-  res.send("User profile");
-});
-
-
+userRouter.get('/profile', userController.getUserInfo);
 
 module.exports = userRouter;
