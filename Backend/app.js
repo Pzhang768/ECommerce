@@ -10,6 +10,7 @@ const cors = require('cors')
 app.use(cors())
 
 const PORT = 3000;
+
 app.use((req, res, next) => {
   console.log(`[${new Date().toISOString()}] ${req.method} ${req.originalUrl}`);
   next();

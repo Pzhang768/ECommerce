@@ -9,6 +9,7 @@ exports.signIn = async (req, res) => {
 
   try {
     const loginUser = await User.findOne({ email: inputEmail });
+    
     if (!loginUser) {
       return res.status(404).json({ message: `No user found with email: ${inputEmail}` });
     }
